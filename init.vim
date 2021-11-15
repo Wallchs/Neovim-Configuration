@@ -21,3 +21,7 @@ set cursorline
 set wildmenu
 set wildmode=longest:list,full
 
+call plug#begin('~/.vim/plugged')
+
+
+call plug#end()
