@@ -22,6 +22,10 @@ set wildmenu
 set wildmode=longest:list,full
 
 call plug#begin('~/.vim/plugged')
-
-
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
+
+colorscheme gruvbox
+let g:airlen_theme='gruvbox'
