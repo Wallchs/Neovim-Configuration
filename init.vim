@@ -27,12 +27,18 @@ call plug#begin('~/AppData/Local/nvim/plugged')
         Plug 'vim-airline/vim-airline'
         Plug 'vim-airline/vim-airline-themes'
         Plug 'ap/vim-css-color'
-        Plug 'mattn/emmet-vim'
         Plug 'tpope/vim-surround'
         Plug 'lukas-reineke/indent-blankline.nvim'
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
+        Plug 'nvim-lua/plenary.nvim'
+        Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 colorscheme gruvbox
 let g:airlen_theme='gruvbox'
 
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
