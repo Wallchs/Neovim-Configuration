@@ -22,12 +22,15 @@ set cursorline
 set wildmenu
 set wildmode=longest:list,full
 
-call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'mattn/emmet-vim'
-
+call plug#begin('~/AppData/Local/nvim/plugged')
+        Plug 'morhetz/gruvbox'
+        Plug 'vim-airline/vim-airline'
+        Plug 'vim-airline/vim-airline-themes'
+        Plug 'ap/vim-css-color'
+        Plug 'mattn/emmet-vim'
+        Plug 'tpope/vim-surround'
+        Plug 'lukas-reineke/indent-blankline.nvim'
+        Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 colorscheme gruvbox
