@@ -23,21 +23,21 @@ set wildmenu
 set wildmode=longest:list,full
 
 call plug#begin('~/AppData/Local/nvim/plugged')
-  │       Plug 'morhetz/gruvbox'
-  │       Plug 'vim-airline/vim-airline'
-  │       Plug 'vim-airline/vim-airline-themes'
-  │       Plug 'ap/vim-css-color'
-  │       Plug 'tpope/vim-surround'
-  │       Plug 'lukas-reineke/indent-blankline.nvim'
-  │       Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  │       Plug 'nvim-lua/plenary.nvim'
-  │       Plug 'mattn/emmet-vim'
-  │       Plug 'nvim-telescope/telescope.nvim'
-  │       Plug 'jiangmiao/auto-pairs'
-  │       Plug 'scrooloose/nerdtree'
-  │       Plug 'ryanoasis/vim-devicons'
-  │       Plug 'kyazdani42/nvim-web-devicons'
-  │       Plug 'romgrk/barbar.nvim'
+│       Plug 'morhetz/gruvbox'
+│       Plug 'vim-airline/vim-airline'
+│       Plug 'vim-airline/vim-airline-themes'
+│       Plug 'ap/vim-css-color'
+│       Plug 'tpope/vim-surround'
+│       Plug 'lukas-reineke/indent-blankline.nvim'
+│       Plug 'neoclide/coc.nvim', {'branch': 'release'}
+│       Plug 'nvim-lua/plenary.nvim'
+│       Plug 'mattn/emmet-vim'
+│       Plug 'nvim-telescope/telescope.nvim'
+│       Plug 'jiangmiao/auto-pairs'
+│       Plug 'scrooloose/nerdtree'
+│       Plug 'ryanoasis/vim-devicons'
+│       Plug 'kyazdani42/nvim-web-devicons'
+│       Plug 'romgrk/barbar.nvim'
 call plug#end()
  
 colorscheme gruvbox
