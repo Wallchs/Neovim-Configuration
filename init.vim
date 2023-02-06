@@ -1,4 +1,5 @@
 set nu
+set encoding=utf-8
 set relativenumber
 set ic
 set nobackup
@@ -29,37 +30,20 @@ call plug#begin('~/AppData/Local/nvim/plugged')
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
         Plug 'nvim-lua/plenary.nvim'
         Plug 'mattn/emmet-vim'
-        Plug 'nvim-telescope/telescope.nvim'
         Plug 'jiangmiao/auto-pairs'
-        Plug 'kyazdani42/nvim-tree.lua'
         Plug 'ryanoasis/vim-devicons'
         Plug 'kyazdani42/nvim-web-devicons'
-        Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-        Plug 'romgrk/barbar.nvim'
-        Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
         Plug 'nvim-lualine/lualine.nvim'
+        Plug 'kyazdani42/nvim-web-devicons'
+        
 call plug#end()
 
-colorscheme tokyonight
-set bg=dark
+colorscheme habamax
+set bg=light
 
-nnoremap <C-t> :NvimTreeToggle<CR>
-nnoremap ;f :Telescope find_files<CR>
+nnoremap <C-t> :find   
+nnoremap ;f :Lex .<CR>
 "set guifont=Ubuntu\ Nerd\ Font:h11
-
-nnoremap <silent>    <A-1> <Cmd>BufferGoto 1<CR>
-nnoremap <silent>    <A-2> <Cmd>BufferGoto 2<CR>
-nnoremap <silent>    <A-3> <Cmd>BufferGoto 3<CR>
-nnoremap <silent>    <A-4> <Cmd>BufferGoto 4<CR>
-nnoremap <silent>    <A-5> <Cmd>BufferGoto 5<CR>
-nnoremap <silent>    <A-6> <Cmd>BufferGoto 6<CR>
-nnoremap <silent>    <A-7> <Cmd>BufferGoto 7<CR>
-nnoremap <silent>    <A-8> <Cmd>BufferGoto 8<CR>
-nnoremap <silent>    <A-9> <Cmd>BufferGoto 9<CR>
-nnoremap <silent>    <A-0> <Cmd>BufferLast<CR>
-
-"Status bar configuration  and lua config files
 lua << END
 require('lualine').setup()
-require("nvim-tree").setup()
-END 
+END
