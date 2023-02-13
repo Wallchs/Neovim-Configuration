@@ -35,13 +35,16 @@ call plug#begin('~/AppData/Local/nvim/plugged')
         Plug 'kyazdani42/nvim-web-devicons'
         Plug 'nvim-lualine/lualine.nvim'
         Plug 'kyazdani42/nvim-web-devicons'
-        
+        Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+        Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+
+
 call plug#end()
 
-colorscheme habamax
-set bg=light
+colorscheme catppuccin
+set bg=dark
 
-nnoremap <C-t> :find   
+nnoremap <C-t> :find
 nnoremap ;f :Lex .<CR>
 "set guifont=Ubuntu\ Nerd\ Font:h11
 lua << END
