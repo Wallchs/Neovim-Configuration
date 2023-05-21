@@ -37,15 +37,17 @@ call plug#begin('~/AppData/Local/nvim/plugged')
         Plug 'kyazdani42/nvim-web-devicons'
         Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
         Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
-
-
-call plug#end()
+        "Autocomplete
+        Plug 'Exafunction/codeium.vim'
+        call plug#end()
 
 colorscheme catppuccin
 set bg=dark
 
 nnoremap <C-t> :find
 nnoremap ;f :Lex .<CR>
+let g:codeium_no_map_tab = v:true
+
 "set guifont=Ubuntu\ Nerd\ Font:h11
 lua << END
 require('lualine').setup()
