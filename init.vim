@@ -24,9 +24,9 @@ set wildmenu
 set wildmode=longest:list,full
 "inserindo teclas de atalho
 nnoremap <Space>t :find  
-nnoremap <Space>f :Lex .<CR>:vertical resize -50<CR>
+nnoremap <Space>f :Lex .<CR>:vertical resize -60<CR>
 "buffers
-nnoremap <Space>l :ls<CR>
+nnoremap <Space>l :ls<CR>:buffer
 
 call plug#begin('~/AppData/Local/nvim/plugged')
         Plug 'ap/vim-css-color'
