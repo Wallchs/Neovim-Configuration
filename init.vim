@@ -24,7 +24,7 @@ set wildmenu
 set wildmode=longest:list,full
 "inserindo teclas de atalho
 nnoremap <Space>t :find  
-nnoremap <Space>f :Lex .<CR>
+nnoremap <Space>f :Lex .<CR>:vertical resize -50<CR>
 "buffers
 nnoremap <Space>l :ls<CR>
 
@@ -39,9 +39,7 @@ call plug#begin('~/AppData/Local/nvim/plugged')
         Plug 'ryanoasis/vim-devicons'
         Plug 'kyazdani42/nvim-web-devicons'
         Plug 'nvim-lualine/lualine.nvim'
-        Plug 'kyazdani42/nvim-web-devicons'
         Plug 'olimorris/onedarkpro.nvim'
-        Plug 'romgrk/barbar.nvim'
 call plug#end()
 
 colorscheme onedark_dark
