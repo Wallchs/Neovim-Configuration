@@ -22,28 +22,30 @@ syntax on
 set cursorline
 set wildmenu
 set wildmode=longest:list,full
+
 "inserindo teclas de atalho
-nnoremap <Space>t :find  
-nnoremap <Space>f :Lex .<CR>:vertical resize -60<CR>
+nnoremap <Space>t :find
+nnoremap <Space>f :Lex .<CR>:vertical resize 30<CR>
 "buffers
-nnoremap <Space>l :ls<CR>:buffer
+nnoremap <Space>b :ls<CR>:buffer
+nnoremap <Space>h :TSEnable highlight<CR>
 
 call plug#begin('~/AppData/Local/nvim/plugged')
         Plug 'ap/vim-css-color'
         Plug 'tpope/vim-surround'
         Plug 'lukas-reineke/indent-blankline.nvim'
-        Plug 'neoclide/coc.nvim', {'branch': 'release'}
-        Plug 'nvim-lua/plenary.nvim'
-        Plug 'mattn/emmet-vim'
+        Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+        Plug 'williamboman/mason.nvim'
+        Plug 'williamboman/mason-lspconfig.nvim'
+        Plug 'neovim/nvim-lspconfig'
         Plug 'jiangmiao/auto-pairs'
-        Plug 'ryanoasis/vim-devicons'
-        Plug 'kyazdani42/nvim-web-devicons'
-        Plug 'nvim-lualine/lualine.nvim'
         Plug 'olimorris/onedarkpro.nvim'
 call plug#end()
 
 colorscheme onedark_dark
 
-lua << END
-require('lualine').setup()
-END
+cab W  w
+cab Wq wq
+cab wQ wq
+cab WQ wq
+cab Q  q
