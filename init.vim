@@ -28,6 +28,8 @@ nnoremap <Space>t :find
 nnoremap <Space>f :Lex .<CR>:vertical resize 30<CR>
 "buffers
 nnoremap <Space>b :ls<CR>:buffer
+nnoremap <Space>m :marks<CR>
+"Ativando treesiter
 nnoremap <Space>h :TSEnable highlight<CR>
 
 call plug#begin('~/AppData/Local/nvim/plugged')
