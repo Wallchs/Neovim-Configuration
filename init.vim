@@ -12,7 +12,7 @@ set incsearch
 set expandtab
 set noswapfile
 
-set path=** "using :find to search files
+set path+=** "using :find to search files
 set scrolloff=999
 set t_Co=256
 set showcmd
