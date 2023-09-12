@@ -55,4 +55,5 @@ cab Q  q
 lua << END
 require('mason').setup()
 require('mason-lspconfig').setup()
+require'lspconfig'.pyright.setup{}
 END
