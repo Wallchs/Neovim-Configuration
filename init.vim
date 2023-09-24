@@ -11,6 +11,8 @@ set hlsearch
 set incsearch
 set expandtab
 set noswapfile
+set spell
+setlocal spell spelllang=pt_br
 
 set path+=** "using :find to search files
 set scrolloff=999
