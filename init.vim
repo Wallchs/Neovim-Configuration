@@ -37,16 +37,23 @@ nnoremap <Space>h :TSEnable highlight<CR>
 call plug#begin('~/AppData/Local/nvim/plugged')
         Plug 'ap/vim-css-color'
         Plug 'tpope/vim-surround'
-        Plug 'lukas-reineke/indent-blankline.nvim'
+        Plug 'lukas-reineke/indent-blankline.nvim', {'main': 'ibl', 'opts': {}}
         Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+        Plug 'jiangmiao/auto-pairs'
+        Plug 'ollykel/v-vim'
         Plug 'williamboman/mason.nvim'
         Plug 'williamboman/mason-lspconfig.nvim'
         Plug 'neovim/nvim-lspconfig'
-        Plug 'jiangmiao/auto-pairs'
-        Plug 'olimorris/onedarkpro.nvim'
+        "colorscheme
+        Plug 'folke/tokyonight.nvim'
+        Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+        Plug 'dracula/vim', { 'as': 'dracula' }
+        Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
+
 call plug#end()
 
-colorscheme onedark_dark
+colorscheme gruvbox-baby
+
 
 cab W  w
 cab Wq wq
@@ -55,7 +62,37 @@ cab WQ wq
 cab Q  q
 
 lua << END
-require('mason').setup()
-require('mason-lspconfig').setup()
-require 'lspconfig'.pyright.setup{}
+require("mason").setup()
+require("mason-lspconfig").setup()
+
+
+local highlight = {
+    "RainbowRed",
+    "RainbowYellow",
+    "RainbowBlue",
+    "RainbowOrange",
+    "RainbowGreen",
+    "RainbowViolet",
+    "RainbowCyan",
+}
+local hooks = require "ibl.hooks"
+-- create the highlight groups in the highlight setup hook, so they are reset
+-- every time the colorscheme changes
+hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+    vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
+    vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
+    vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
+    vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
+    vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
+    vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
+    vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
+end)
+
+vim.g.rainbow_delimiters = { highlight = highlight }
+require("ibl").setup { scope = { highlight = highlight } }
+
+hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
+
 END
+
+let g:loaded_python3_provider = 1
