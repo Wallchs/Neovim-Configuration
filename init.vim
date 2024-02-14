@@ -30,9 +30,11 @@ set wildmode=longest:list,full
 nnoremap <Space>t :find
 nnoremap <Space>f :NERDTreeToggle<CR>
 "buffers
-nnoremap <Space>b :ls<CR>:buffer  
+nnoremap <Space>b :ls<CR>:buffer
 nnoremap <Space>m :marks<CR>
 nnoremap <Space>h :TSEnable highlight<CR>
+" ggVG"+y copia todo o conteÃºdo do arquivo
+nnoremap <Space>y ggVG"+y
 
 call plug#begin('~/AppData/Local/nvim/plugged')
         Plug 'ap/vim-css-color'
@@ -55,8 +57,8 @@ call plug#end()
 colorscheme gruvbox-baby
 
 
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeDirArrowExpandable = 'â–¸'
+let g:NERDTreeDirArrowCollapsible = 'â–¾'
 
 cab W  w
 cab Wq wq
@@ -64,11 +66,5 @@ cab wQ wq
 cab WQ wq
 cab Q  q
 
-lua << END
-
-
-
-
-END
 
 let g:loaded_python3_provider = 1
