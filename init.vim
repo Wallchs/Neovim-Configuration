@@ -48,6 +48,7 @@ call plug#begin('~/AppData/Local/nvim/plugged')
         Plug 'dracula/vim', { 'as': 'dracula' }
         Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
         Plug 'scrooloose/nerdtree'
+        Plug 'EdenEast/nightfox.nvim'  
         "Autocompletar
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
         Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'npm ci'}
@@ -58,7 +59,7 @@ call plug#begin('~/AppData/Local/nvim/plugged')
         Plug 'nvim-lualine/lualine.nvim'
 call plug#end()
 
-colorscheme gruvbox-baby
+colorscheme nightfox
 
 
 cab W  w
