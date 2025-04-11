@@ -28,10 +28,10 @@ set wildmode=longest:list,full
 
 "inserindo teclas de Atalho
 nnoremap <Space>t :find
-nnoremap <Space>f :Telescope<CR>
+nnoremap <Space>f :Telescope find_files<CR>
 "buffers
 nnoremap <Space>b :Telescope buffers<CR>
-nnoremap <Space>m :marks<CR>
+nnoremap <Space>m :Telescope marks<CR>
 nnoremap <Space>h :TSEnable highlight<CR>
 " ggVG"+y copia todo o conteÃºdo do arquivo
 nnoremap <Space>y ggVG"+y
@@ -54,14 +54,12 @@ call plug#begin('~/AppData/Local/nvim/plugged')
         Plug 'nvim-lua/plenary.nvim'
         Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
         " or                                , { 'branch': '0.1.x' }
-
+        Plug 'nvim-tree/nvim-web-devicons'
+        Plug 'nvim-lualine/lualine.nvim'
 call plug#end()
 
 colorscheme gruvbox-baby
 
-
-let g:NERDTreeDirArrowExpandable = '🡢'
-let g:NERDTreeDirArrowCollapsible = '🡣'
 
 cab W  w
 cab Wq wq
@@ -72,3 +70,7 @@ cab Q  q
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
 let g:loaded_python3_provider = 1
+lua << END
+require('lualine').setup()
+
+END
