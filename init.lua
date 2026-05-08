@@ -26,7 +26,7 @@ opt.incsearch = true
 opt.spell = true
 opt.spelllang = { 'pt_br' }
 opt.scrolloff = 8
-opt.colorcolumn = '80'
+-- opt.colorcolumn = '80'
 opt.termguicolors = true
 opt.cursorline = true
 opt.showcmd = true
@@ -46,12 +46,16 @@ local opts_nore = { noremap = true, silent = true }
 
 -- Telescope shortcuts
 map('n', '<Leader>f', "<cmd>lua require('telescope.builtin').find_files()<CR>", opts_nore)
+map('n', '<Leader>j', "<cmd>lua require('telescope.builtin').jumplist()<CR>", opts_nore)
 map('n', '<Leader>fg', "<cmd>lua require('telescope.builtin').live_grep()<CR>", opts_nore)
 map('n', '<Leader>fb', "<cmd>lua require('telescope.builtin').buffers()<CR>", opts_nore)
 map('n', '<Leader>fh', "<cmd>lua require('telescope.builtin').help_tags()<CR>", opts_nore)
 map('n', '<Leader>fp', "<cmd>lua require('telescope.builtin').git_files()<CR>", opts_nore)
 map('n', '<Leader>fr', "<cmd>lua require('telescope.builtin').resume()<CR>", opts_nore)
 map('n', '<Leader>fd', "<cmd>lua require('telescope.builtin').diagnostics()<CR>", opts_nore)
+
+--erros navegations
+map('n', '<Leader>e', "<cmd>CocList diagnostics<CR>", opts_nore)
 
 -- Buffers, marks, etc
 map('n', '<Leader>b', '<cmd>Telescope buffers<CR>', opts_nore)
@@ -86,8 +90,7 @@ vim.cmd [[
   \" Telescope
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 
-  \" Treesitter and surrounding
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  \" surrounding
   Plug 'tpope/vim-surround'
   Plug 'jiangmiao/auto-pairs'
 
