@@ -63,6 +63,13 @@ map('n', '<Leader>m', '<cmd>Telescope marks<CR>', opts_nore)
 map('n', '<Leader>y', 'ggVG"+y', opts_nore)
 map('n', '<Leader>h', '<cmd>TSBufToggle highlight<CR>', opts_nore)
 
+
+-- Atalho personalizado para o Flash Jump usando Leader + gw
+vim.keymap.set({ "n", "x", "o" }, "<leader>gw", function() 
+  require("flash").jump() 
+end, { desc = "Flash Jump", noremap = true, silent = true })
+
+
 -- Git
 map('n', '<Leader>gs', '<cmd>lua require("gitsigns").toggle_current_line_blame()<CR>', opts_nore)
 
@@ -109,6 +116,9 @@ vim.cmd [[
 
   \" Statusline
   Plug 'nvim-lualine/lualine.nvim'
+
+  \"navegation faster
+  Plug 'folke/flash.nvim'
 
   call plug#end()
 ]]
